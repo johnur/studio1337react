@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Mainpage from './components/Mainpage';
+import Iina from './components/Iina';
+import Sanni from './components/Sanni';
+import Elina from './components/Elina';
+import './style/Scrollbar.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Router>
+        <Switch>
+   <Route exact path="/" component={Mainpage} />
+   <Route exact path="/iina" component={Iina} />
+   <Route exact path="/sanni" component={Sanni} />
+   <Route exact path="/elina" component={Elina} />
+   </Switch>
+   </Router>
     </div>
   );
 }
